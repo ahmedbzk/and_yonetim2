@@ -1,0 +1,112 @@
+<!-- Section 1: Hero Section -->
+<section class="hero-service">
+  <div class="hero-overlay"></div>
+  <div class="container hero-content text-center">
+    <span class="badge mb-3">{{ titleData.badge }}</span>
+    <h1 class="display-3 fw-bolder mb-4">{{ titleData.title }}</h1>
+    <p class="lead text-white-50 mx-auto mb-5" style="max-width: 700px;">
+      {{ titleData.desc }}
+    </p>
+    <a href="#services-detail" class="btn btn-service btn-lg px-5 rounded-pill shadow-lg">Hizmetleri Keşfet</a>
+  </div>
+  
+  <div class="shape-divider">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,119.93,197.36,105.7,249.77,94.51,289.44,65.3,321.39,56.44Z" class="shape-fill"></path>
+    </svg>
+  </div>
+</section>
+
+<!-- Section 2: Features Grid -->
+<section id="services-detail" class="service-features py-6 bg-light-blue">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h6 class="text-service fw-bold text-uppercase tracking-wide">Hizmet Kapsamı</h6>
+      <h2 class="display-6 fw-bold">Size Neler Sunuyoruz?</h2>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-lg-3 col-md-6" *ngFor="let feature of features">
+        <div class="service-card h-100 p-4 bg-white rounded-4 shadow-sm text-center">
+          <div class="icon-wrapper mx-auto mb-4">
+            <i [class]="feature.icon"></i>
+          </div>
+          <h3 class="h5 fw-bold mb-3">{{ feature.title }}</h3>
+          <p class="text-muted small mb-0">{{ feature.text }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 3: Process Steps -->
+<section class="service-process py-6">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-5 mb-5 mb-lg-0">
+        <h6 class="text-service fw-bold text-uppercase tracking-wide">Nasıl Çalışıyoruz?</h6>
+        <h2 class="display-6 fw-bold mb-4">4 Adımda Kusursuz Sonuçlar</h2>
+        <p class="text-muted mb-4">
+          {{ processTitleDesc }}
+        </p>
+        <button (click)="contactSection.scrollIntoView({behavior: 'smooth'})" class="btn btn-outline-service rounded-pill px-4 py-2">Detaylı Bilgi</button>
+      </div>
+      
+      <div class="col-lg-7">
+        <div class="row g-4">
+          <div class="col-md-6" *ngFor="let p of processSteps; let i = index">
+            <div class="process-box p-4 rounded-4 bg-white shadow-sm position-relative">
+              <div class="step-number">{{ p.step }}</div>
+              <h4 class="h5 fw-bold mt-2 mb-2">{{ p.title }}</h4>
+              <p class="text-muted small mb-0">{{ p.desc }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 4: Info & Visuals -->
+<section class="service-info py-6 bg-dark text-white">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <div class="image-stack">
+          <img [src]="images.imgFront" alt="Service 1" class="img-fluid rounded-4 shadow-lg img-front">
+          <img [src]="images.imgBack" alt="Service 2" class="img-fluid rounded-4 shadow-lg img-back">
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <h6 class="text-service-light fw-bold text-uppercase tracking-wide mb-2">Uzman Dokunuşu</h6>
+        <h2 class="display-6 fw-bold mb-4">{{ infoTitle }}</h2>
+        <ul class="list-unstyled custom-list mt-4">
+          <li class="mb-4 d-flex" *ngFor="let item of infoList">
+            <div class="list-icon-box bg-service text-white me-3">
+              <i [class]="item.icon"></i>
+            </div>
+            <div>
+              <h5 class="fw-bold mb-1">{{ item.title }}</h5>
+              <p class="text-white-50 small mb-0">{{ item.desc }}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 5: Contact -->
+<section #contactSection class="contact-section py-6 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Ücretsiz Keşif ve Fiyat Teklifi İsteyin</h2>
+      <p class="text-muted">Formu doldurun, uzman ekibimiz en kısa sürede size ulaşsın.</p>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <app-contact-form></app-contact-form>
+      </div>
+    </div>
+  </div>
+</section>

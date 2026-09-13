@@ -1,3 +1,33 @@
 import { Routes } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ServicesComponent } from './pages/services/services.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { BahceBakimComponent } from './pages/services/sub-services/bahce-bakim/bahce-bakim.component';
+import { ConciergeComponent } from './pages/services/sub-services/concierge/concierge.component';
+import { DanismaComponent } from './pages/services/sub-services/danisma/danisma.component';
+import { DenetimRaporlamaComponent } from './pages/services/sub-services/denetim-raporlama/denetim-raporlama.component';
+import { SiteDanismanlikComponent } from './pages/services/sub-services/site-danismanlik/site-danismanlik.component';
+import { SiteHukukComponent } from './pages/services/sub-services/site-hukuk/site-hukuk.component';
+import { SiteMuhasebeComponent } from './pages/services/sub-services/site-muhasebe/site-muhasebe.component';
+import { TeknikComponent } from './pages/services/sub-services/teknik/teknik.component';
+import { TemizlikComponent } from './pages/services/sub-services/temizlik/temizlik.component';
+import { WebTasarimComponent } from './pages/services/sub-services/web-tasarim/web-tasarim.component';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'kurumsal', component: AboutComponent },
+  { path: 'hizmetlerimiz', component: ServicesComponent },
+  { path: 'hizmetlerimiz/bahce-bakim', component: BahceBakimComponent },
+  { path: 'hizmetlerimiz/concierge', component: ConciergeComponent },
+  { path: 'hizmetlerimiz/danisma', component: DanismaComponent },
+  { path: 'hizmetlerimiz/denetim-raporlama', component: DenetimRaporlamaComponent },
+  { path: 'hizmetlerimiz/site-danismanlik', component: SiteDanismanlikComponent },
+  { path: 'hizmetlerimiz/site-hukuk', component: SiteHukukComponent },
+  { path: 'hizmetlerimiz/site-muhasebe', component: SiteMuhasebeComponent },
+  { path: 'hizmetlerimiz/teknik', component: TeknikComponent },
+  { path: 'hizmetlerimiz/temizlik', component: TemizlikComponent },
+  { path: 'hizmetlerimiz/web-tasarim', component: WebTasarimComponent },
+  { path: 'iletisim', component: ContactComponent },
+  { path: '**', redirectTo: '' }
+];

@@ -1,0 +1,168 @@
+.social-fab {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fab-main {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 2;
+
+  &:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.fab-icon {
+  width: 32px;
+  height: 32px;
+  transition: all 0.4s ease;
+  position: absolute;
+  
+  &.hidden {
+    opacity: 0;
+    transform: rotate(180deg) scale(0);
+  }
+}
+
+.building-icon {
+  transform: scale(1);
+}
+
+.close-icon {
+  transform: rotate(0) scale(1);
+}
+
+/* Building Silhouette Options */
+.fab-options {
+  position: absolute;
+  bottom: 80px; /* Sit right above the button */
+  right: 0;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 0; /* Stack floors tightly */
+  background: var(--primary-color);
+  border-radius: 12px 12px 6px 6px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  
+  /* Building Roof Effect */
+  &::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    width: 60px;
+    height: 20px;
+    background: var(--primary-color);
+    clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    width: 40px;
+    height: 15px;
+    background: var(--primary-color);
+    clip-path: polygon(0 100%, 100% 100%, 50% 0);
+  }
+
+  transform-origin: bottom center;
+  transform: translateY(20px) scaleY(0);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  padding: 15px 0 10px;
+}
+
+.social-fab.open .fab-options {
+  transform: translateY(0) scaleY(1);
+  opacity: 1;
+  visibility: visible;
+  
+  .floor-3 { transition-delay: 0.3s; }
+  .floor-2 { transition-delay: 0.2s; }
+  .floor-1 { transition-delay: 0.1s; }
+}
+
+.floor {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 25px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  
+  opacity: 0;
+  transform: translateX(20px);
+  
+  /* Window Light Effect */
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--secondary-color);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+    transform-origin: bottom;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--secondary-color);
+    padding-left: 30px;
+    
+    &::after {
+      transform: scaleY(1);
+    }
+  }
+
+  svg {
+    /* Each icon acts like a glowing window */
+    filter: drop-shadow(0 0 5px rgba(0, 174, 239, 0.4));
+  }
+}
+
+.social-fab.open .floor {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  .social-fab {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .fab-main {
+    width: 60px;
+    height: 60px;
+  }
+}
