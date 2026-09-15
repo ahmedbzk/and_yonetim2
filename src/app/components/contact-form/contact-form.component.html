@@ -1,38 +1,79 @@
 <div class="contact-form-card">
   <div class="form-header text-center">
-    <h3 class="fw-bold mb-2">Detaylı Bilgi & Teklif Alın</h3>
-    <p class="text-muted">Hizmetlerimiz hakkında daha fazla bilgi almak için aşağıdaki formu doldurun, uzman ekibimiz en kısa sürede size dönüş yapsın.</p>
+    <h3 class="fw-bold mb-2">{{ 'CONTACT_PAGE.FORM.TITLE' | translate }}</h3>
+    <p class="text-muted">{{ 'CONTACT_PAGE.FORM.DESC' | translate }}</p>
   </div>
   
-  <form class="custom-form mt-4">
+  <!-- Başarı ve Hata Mesajları -->
+  <div *ngIf="submitSuccess" class="alert alert-success mt-4 d-flex align-items-center" role="alert">
+    <i class="fas fa-check-circle fs-4 me-2"></i>
+    <div>{{ 'CONTACT_PAGE.FORM.SUCCESS' | translate }}</div>
+  </div>
+
+  <div *ngIf="submitError" class="alert alert-danger mt-4 d-flex align-items-center" role="alert">
+    <i class="fas fa-exclamation-triangle fs-4 me-2"></i>
+    <div>{{ errorMessage }}</div>
+  </div>
+
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="custom-form mt-4" *ngIf="!submitSuccess">
     <div class="row g-3">
+      <!-- Ad Soyad -->
       <div class="col-md-6">
         <div class="form-floating">
-          <input type="text" class="form-control" id="nameInput" placeholder="Adınız Soyadınız" required>
-          <label for="nameInput">Adınız Soyadınız</label>
+          <input type="text" class="form-control" id="nameInput" [placeholder]="'CONTACT_PAGE.FORM.NAME' | translate" formControlName="name" 
+            [ngClass]="{ 'is-invalid': f['name'].invalid && f['name'].touched }">
+          <label for="nameInput">{{ 'CONTACT_PAGE.FORM.NAME' | translate }}</label>
+        </div>
+        <div *ngIf="f['name'].invalid && f['name'].touched" class="text-danger small mt-1">
+          <span *ngIf="f['name'].errors?.['required']">{{ 'CONTACT_PAGE.FORM.NAME_REQ' | translate }}</span>
+          <span *ngIf="f['name'].errors?.['minlength']">{{ 'CONTACT_PAGE.FORM.NAME_MIN' | translate }}</span>
         </div>
       </div>
+
+      <!-- E-Posta -->
       <div class="col-md-6">
         <div class="form-floating">
-          <input type="email" class="form-control" id="emailInput" placeholder="E-posta Adresiniz" required>
-          <label for="emailInput">E-posta Adresiniz</label>
+          <input type="email" class="form-control" id="emailInput" [placeholder]="'CONTACT_PAGE.FORM.EMAIL' | translate" formControlName="email"
+            [ngClass]="{ 'is-invalid': f['email'].invalid && f['email'].touched }">
+          <label for="emailInput">{{ 'CONTACT_PAGE.FORM.EMAIL' | translate }}</label>
+        </div>
+        <div *ngIf="f['email'].invalid && f['email'].touched" class="text-danger small mt-1">
+          <span *ngIf="f['email'].errors?.['required']">{{ 'CONTACT_PAGE.FORM.EMAIL_REQ' | translate }}</span>
+          <span *ngIf="f['email'].errors?.['email']">{{ 'CONTACT_PAGE.FORM.EMAIL_INV' | translate }}</span>
         </div>
       </div>
+
+      <!-- Telefon -->
       <div class="col-12">
         <div class="form-floating">
-          <input type="tel" class="form-control" id="phoneInput" placeholder="Telefon Numaranız" required>
-          <label for="phoneInput">Telefon Numaranız</label>
+          <input type="text" class="form-control" id="subjectInput" [placeholder]="'CONTACT_PAGE.FORM.SUBJECT' | translate" formControlName="subject"
+            [ngClass]="{ 'is-invalid': f['subject'].invalid && f['subject'].touched }">
+          <label for="subjectInput">{{ 'CONTACT_PAGE.FORM.SUBJECT' | translate }}</label>
+        </div>
+        <div *ngIf="f['subject'].invalid && f['subject'].touched" class="text-danger small mt-1">
+          <span *ngIf="f['subject'].errors?.['required']">{{ 'CONTACT_PAGE.FORM.SUBJECT_REQ' | translate }}</span>
+          <span *ngIf="f['subject'].errors?.['pattern']">{{ 'CONTACT_PAGE.FORM.SUBJECT_INV' | translate }}</span>
         </div>
       </div>
+
+      <!-- Mesaj -->
       <div class="col-12">
         <div class="form-floating">
-          <textarea class="form-control" placeholder="Mesajınız" id="messageInput" style="height: 120px" required></textarea>
-          <label for="messageInput">Mesajınız</label>
+          <textarea class="form-control" [placeholder]="'CONTACT_PAGE.FORM.MESSAGE' | translate" id="messageInput" style="height: 120px" formControlName="message"
+            [ngClass]="{ 'is-invalid': f['message'].invalid && f['message'].touched }"></textarea>
+          <label for="messageInput">{{ 'CONTACT_PAGE.FORM.MESSAGE' | translate }}</label>
+        </div>
+        <div *ngIf="f['message'].invalid && f['message'].touched" class="text-danger small mt-1">
+          <span *ngIf="f['message'].errors?.['required']">{{ 'CONTACT_PAGE.FORM.MESSAGE_REQ' | translate }}</span>
+          <span *ngIf="f['message'].errors?.['minlength']">{{ 'CONTACT_PAGE.FORM.MESSAGE' | translate }} en az 10 karakter olmalıdır.</span>
         </div>
       </div>
+
+      <!-- Gönder Butonu -->
       <div class="col-12 mt-4 text-center">
-        <button type="submit" class="btn btn-primary btn-lg px-5 rounded-pill shadow-sm">
-          Gönder <i class="fas fa-paper-plane ms-2"></i>
+        <button type="submit" class="btn btn-primary btn-lg px-5 rounded-pill shadow-sm" [disabled]="isSubmitting">
+          <span *ngIf="!isSubmitting">{{ 'CONTACT_PAGE.FORM.SUBMIT' | translate }} <i class="fas fa-paper-plane ms-2"></i></span>
+          <span *ngIf="isSubmitting"><i class="fas fa-spinner fa-spin me-2"></i> {{ 'CONTACT_PAGE.FORM.SUBMITTING' | translate }}</span>
         </button>
       </div>
     </div>

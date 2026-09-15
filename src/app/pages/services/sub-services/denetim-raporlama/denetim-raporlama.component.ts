@@ -2,51 +2,52 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ContactFormComponent } from '../../../../components/contact-form/contact-form.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-denetim-raporlama',
   standalone: true,
-  imports: [CommonModule, RouterModule, ContactFormComponent],
+  imports: [CommonModule, RouterModule, ContactFormComponent, TranslateModule],
   templateUrl: './denetim-raporlama.component.html',
   styleUrl: './denetim-raporlama.component.scss'
 })
 export class DenetimRaporlamaComponent {
   titleData = {
-    badge: 'Şeffaf Yönetim',
-    title: 'Denetim ve Raporlama',
-    desc: 'Site veya tesis yönetim süreçlerinizin yasalara ve mali standartlara uygunluğunu denetliyor, şeffaf bir şekilde raporluyoruz. Her şey kontrol altında.'
+    badgeKey: 'SUB_SERVICES_DATA.denetim-raporlama.HERO_BADGE',
+    titleKey: 'SUB_SERVICES_DATA.denetim-raporlama.HERO_TITLE',
+    descKey: 'SUB_SERVICES_DATA.denetim-raporlama.HERO_DESC'
   };
 
   features = [
     {
       icon: "fas fa-file-invoice-dollar",
-      title: "Mali Denetim",
-      text: "Gelir-gider tablolarının, faturaların ve banka hareketlerinin titizlikle incelenmesi."
+      titleKey: 'SUB_SERVICES_DATA.denetim-raporlama.F1_T',
+      textKey: 'SUB_SERVICES_DATA.denetim-raporlama.F1_D'
     },
     {
       icon: "fas fa-balance-scale",
-      title: "Hukuki Uygunluk",
-      text: "Alınan kararların ve yapılan işlemlerin Kat Mülkiyeti Kanunu'na uygunluğunun denetimi."
+      titleKey: 'SUB_SERVICES_DATA.denetim-raporlama.F2_T',
+      textKey: 'SUB_SERVICES_DATA.denetim-raporlama.F2_D'
     },
     {
       icon: "fas fa-clipboard-check",
-      title: "Operasyonel Denetim",
-      text: "Temizlik, güvenlik, teknik gibi saha personelinin performansının ölçülmesi."
+      titleKey: 'SUB_SERVICES_DATA.denetim-raporlama.F3_T',
+      textKey: 'SUB_SERVICES_DATA.denetim-raporlama.F3_D'
     },
     {
       icon: "fas fa-chart-line",
-      title: "Detaylı Raporlama",
-      text: "Tüm denetim sonuçlarının anlaşılır grafikler ve raporlarla kat maliklerine sunulması."
+      titleKey: 'SUB_SERVICES_DATA.denetim-raporlama.F4_T',
+      textKey: 'SUB_SERVICES_DATA.denetim-raporlama.F4_D'
     }
   ];
 
-  processTitleDesc = 'Tarafsız ve uzman denetim ekibimizle, soru işaretlerine yer bırakmayan şeffaf bir süreç yürütüyoruz.';
+  processTitleDescKey = 'SUB_SERVICES_DATA.denetim-raporlama.PROCESS_DESC';
 
   processSteps = [
-    { step: 1, title: 'Veri Toplama', desc: 'Mali tablolar, karar defterleri ve operasyonel veriler toplanır.' },
-    { step: 2, title: 'İnceleme', desc: 'Uzman denetçilerimiz tarafından veriler yasal mevzuata göre incelenir.' },
-    { step: 3, title: 'Tespit ve Öneri', desc: 'Eksik veya hatalı işlemler tespit edilerek düzeltici öneriler hazırlanır.' },
-    { step: 4, title: 'Sunum', desc: 'Hazırlanan denetim raporu periyodik olarak yönetim kuruluna ve kat maliklerine sunulur.' }
+    { step: 1, titleKey: 'SUB_SERVICES_DATA.denetim-raporlama.P1_T', descKey: 'SUB_SERVICES_DATA.denetim-raporlama.P1_D' },
+    { step: 2, titleKey: 'SUB_SERVICES_DATA.denetim-raporlama.P2_T', descKey: 'SUB_SERVICES_DATA.denetim-raporlama.P2_D' },
+    { step: 3, titleKey: 'SUB_SERVICES_DATA.denetim-raporlama.P3_T', descKey: 'SUB_SERVICES_DATA.denetim-raporlama.P3_D' },
+    { step: 4, titleKey: 'SUB_SERVICES_DATA.denetim-raporlama.P4_T', descKey: 'SUB_SERVICES_DATA.denetim-raporlama.P4_D' }
   ];
 
   images = {
@@ -54,23 +55,23 @@ export class DenetimRaporlamaComponent {
     imgBack: 'assets/images/photo-1454165804606-c3d57bc86b40.jpg'
   };
 
-  infoTitle = 'Neden Denetim Şart?';
+  infoTitleKey = 'SUB_SERVICES_DATA.denetim-raporlama.INFO_TITLE';
 
   infoList = [
     {
       icon: 'fas fa-shield-alt',
-      title: 'Güven Ortamı',
-      desc: 'Şeffaflık sayesinde yönetim ve kat malikleri arasında tam bir güven inşa edilir.'
+      titleKey: 'SUB_SERVICES_DATA.denetim-raporlama.I1_T',
+      descKey: 'SUB_SERVICES_DATA.denetim-raporlama.I1_D'
     },
     {
       icon: 'fas fa-exclamation-triangle',
-      title: 'Risk Yönetimi',
-      desc: 'Olası mali ve hukuki hataların önceden tespit edilerek zararın önlenmesi.'
+      titleKey: 'SUB_SERVICES_DATA.denetim-raporlama.I2_T',
+      descKey: 'SUB_SERVICES_DATA.denetim-raporlama.I2_D'
     },
     {
       icon: 'fas fa-gavel',
-      title: 'Yasal Zorunluluk',
-      desc: 'Kanunların gerektirdiği denetim yükümlülüklerinin profesyonelce yerine getirilmesi.'
+      titleKey: 'SUB_SERVICES_DATA.denetim-raporlama.I3_T',
+      descKey: 'SUB_SERVICES_DATA.denetim-raporlama.I3_D'
     }
   ];
 }

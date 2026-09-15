@@ -2,51 +2,52 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ContactFormComponent } from '../../../../components/contact-form/contact-form.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-site-danismanlik',
   standalone: true,
-  imports: [CommonModule, RouterModule, ContactFormComponent],
+  imports: [CommonModule, RouterModule, ContactFormComponent, TranslateModule],
   templateUrl: './site-danismanlik.component.html',
   styleUrl: './site-danismanlik.component.scss'
 })
 export class SiteDanismanlikComponent {
   titleData = {
-    badge: 'Uzman Görüşü',
-    title: 'Site ve Tesis Yönetim Danışmanlığı',
-    desc: 'Kendi sitenizi yönetirken profesyonel desteğe ihtiyaç duyduğunuz her an yanınızdayız. Bilgi birikimimizle yönetim süreçlerinizi kolaylaştırıyoruz.'
+    badgeKey: 'SUB_SERVICES_DATA.site-danismanlik.HERO_BADGE',
+    titleKey: 'SUB_SERVICES_DATA.site-danismanlik.HERO_TITLE',
+    descKey: 'SUB_SERVICES_DATA.site-danismanlik.HERO_DESC'
   };
 
   features = [
     {
       icon: "fas fa-users-cog",
-      title: "Yönetim Planı Hazırlama",
-      text: "Sitenizin ihtiyaçlarına ve kanunlara uygun, sürdürülebilir bir yönetim planının oluşturulması."
+      titleKey: 'SUB_SERVICES_DATA.site-danismanlik.F1_T',
+      textKey: 'SUB_SERVICES_DATA.site-danismanlik.F1_D'
     },
     {
       icon: "fas fa-hand-holding-usd",
-      title: "Bütçe ve Aidat Belirleme",
-      text: "Yıllık işletme projelerinin hazırlanması ve adil aidat dağılımının hesaplanması."
+      titleKey: 'SUB_SERVICES_DATA.site-danismanlik.F2_T',
+      textKey: 'SUB_SERVICES_DATA.site-danismanlik.F2_D'
     },
     {
       icon: "fas fa-chalkboard-teacher",
-      title: "Yönetici Eğitimi",
-      text: "Site yöneticilerine yasal sorumluluklar, muhasebe ve operasyonel süreçler hakkında eğitim."
+      titleKey: 'SUB_SERVICES_DATA.site-danismanlik.F3_T',
+      textKey: 'SUB_SERVICES_DATA.site-danismanlik.F3_D'
     },
     {
       icon: "fas fa-balance-scale",
-      title: "Hukuki Destek",
-      text: "Kat malikleri arası anlaşmazlıklarda ve genel kurul toplantılarında danışmanlık hizmeti."
+      titleKey: 'SUB_SERVICES_DATA.site-danismanlik.F4_T',
+      textKey: 'SUB_SERVICES_DATA.site-danismanlik.F4_D'
     }
   ];
 
-  processTitleDesc = 'Sorunları büyümeden çözmek ve sistemli bir yönetim kurmak için rehberlik ediyoruz.';
+  processTitleDescKey = 'SUB_SERVICES_DATA.site-danismanlik.PROCESS_DESC';
 
   processSteps = [
-    { step: 1, title: 'Mevcut Durum Analizi', desc: 'Sitenizin yönetim yapısı, mali durumu ve eksiklikleri incelenir.' },
-    { step: 2, title: 'Strateji Geliştirme', desc: 'Tespit edilen sorunlara yönelik kalıcı ve yasal çözüm önerileri sunulur.' },
-    { step: 3, title: 'Sistem Kurulumu', desc: 'İşletme projesi, personel görev tanımları ve bütçe sistemleri kurulur.' },
-    { step: 4, title: 'Sürekli Destek', desc: 'İhtiyaç duyduğunuz her an telefonla veya yerinde destek sağlanır.' }
+    { step: 1, titleKey: 'SUB_SERVICES_DATA.site-danismanlik.P1_T', descKey: 'SUB_SERVICES_DATA.site-danismanlik.P1_D' },
+    { step: 2, titleKey: 'SUB_SERVICES_DATA.site-danismanlik.P2_T', descKey: 'SUB_SERVICES_DATA.site-danismanlik.P2_D' },
+    { step: 3, titleKey: 'SUB_SERVICES_DATA.site-danismanlik.P3_T', descKey: 'SUB_SERVICES_DATA.site-danismanlik.P3_D' },
+    { step: 4, titleKey: 'SUB_SERVICES_DATA.site-danismanlik.P4_T', descKey: 'SUB_SERVICES_DATA.site-danismanlik.P4_D' }
   ];
 
   images = {
@@ -54,23 +55,23 @@ export class SiteDanismanlikComponent {
     imgBack: 'assets/images/photo-1517048676732-d65bc937f952.jpg'
   };
 
-  infoTitle = 'Doğru Bilgi, Huzurlu Yaşam';
+  infoTitleKey = 'SUB_SERVICES_DATA.site-danismanlik.INFO_TITLE';
 
   infoList = [
     {
       icon: 'fas fa-book-open',
-      title: 'Mevzuat Hakimiyeti',
-      desc: 'Sürekli güncellenen kanunlara göre yasal ve güvenli adımlar atmanızı sağlıyoruz.'
+      titleKey: 'SUB_SERVICES_DATA.site-danismanlik.I1_T',
+      descKey: 'SUB_SERVICES_DATA.site-danismanlik.I1_D'
     },
     {
       icon: 'fas fa-handshake',
-      title: 'Tarafsız Arabuluculuk',
-      desc: 'Kat malikleri arasındaki sorunların hukuki sınırlar içinde sulh ile çözülmesi.'
+      titleKey: 'SUB_SERVICES_DATA.site-danismanlik.I2_T',
+      descKey: 'SUB_SERVICES_DATA.site-danismanlik.I2_D'
     },
     {
       icon: 'fas fa-chart-pie',
-      title: 'Maliyet Optimizasyonu',
-      desc: 'Doğru planlama ile gereksiz harcamaların önüne geçerek bütçenizi koruyoruz.'
+      titleKey: 'SUB_SERVICES_DATA.site-danismanlik.I3_T',
+      descKey: 'SUB_SERVICES_DATA.site-danismanlik.I3_D'
     }
   ];
 }

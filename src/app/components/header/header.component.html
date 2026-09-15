@@ -42,8 +42,8 @@
     <nav class="nav-menu" [class.active]="isMenuOpen">
       <ul class="nav-links left-links">
         <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-            (click)="closeMenu()">Anasayfa</a></li>
-        <li><a routerLink="/kurumsal" routerLinkActive="active" (click)="closeMenu()">Hakkımızda</a></li>
+            (click)="closeMenu()">{{ 'HEADER.HOME' | translate }}</a></li>
+        <li><a routerLink="/kurumsal" routerLinkActive="active" (click)="closeMenu()">{{ 'HEADER.ABOUT' | translate }}</a></li>
       </ul>
 
       <div class="desktop-logo-wrapper">
@@ -53,31 +53,51 @@
       </div>
 
       <ul class="nav-links right-links">
-        <li class="dropdown">
+        <li class="dropdown" [class.mobile-open]="isDropdownOpen">
           <a class="nav-dropdown-link" style="cursor: pointer;" routerLink="/hizmetlerimiz" routerLinkActive="active"
-            (click)="$event.preventDefault();">Hizmetlerimiz <i class="fas fa-chevron-down"
-              style="font-size: 0.7em; margin-left: 3px;"></i></a>
+            (click)="toggleDropdown($event)">{{ 'HEADER.SERVICES' | translate }} <i class="fas fa-chevron-down"
+              style="font-size: 0.7em; margin-left: 3px; display: inline-block; transition: transform 0.3s ease;" 
+              [ngStyle]="{'transform': isDropdownOpen ? 'rotate(180deg)' : 'none'}"></i></a>
           <ul class="dropdown-menu">
-            <li><a routerLink="/hizmetlerimiz/bahce-bakim" (click)="closeMenu()">Bahçe Bakım Hizmetleri</a></li>
-            <li><a routerLink="/hizmetlerimiz/concierge" (click)="closeMenu()">Concierge Hizmetleri</a></li>
-            <li><a routerLink="/hizmetlerimiz/danisma" (click)="closeMenu()">Danışma Hizmetleri</a></li>
-            <li><a routerLink="/hizmetlerimiz/denetim-raporlama" (click)="closeMenu()">Denetim ve Raporlama</a></li>
-            <li><a routerLink="/hizmetlerimiz/site-danismanlik" (click)="closeMenu()">Site Danışmanlık</a></li>
-            <li><a routerLink="/hizmetlerimiz/site-hukuk" (click)="closeMenu()">Site Hukuk Hizmetleri</a></li>
-            <li><a routerLink="/hizmetlerimiz/site-muhasebe" (click)="closeMenu()">Site Muhasebe Hizmetleri</a></li>
-            <li><a routerLink="/hizmetlerimiz/teknik" (click)="closeMenu()">Teknik Hizmetler</a></li>
-            <li><a routerLink="/hizmetlerimiz/temizlik" (click)="closeMenu()">Temizlik Hizmetleri</a></li>
-            <li><a routerLink="/hizmetlerimiz/web-tasarim" (click)="closeMenu()">Web Tasarım ve Yazılım</a></li>
+            <li><a routerLink="/hizmetlerimiz/bahce-bakim" (click)="closeMenu()">{{ 'HEADER.SUB_SERVICES.BAHCE' | translate }}</a></li>
+            <li><a routerLink="/hizmetlerimiz/concierge" (click)="closeMenu()">{{ 'HEADER.SUB_SERVICES.CONCIERGE' | translate }}</a></li>
+            <li><a routerLink="/hizmetlerimiz/danisma" (click)="closeMenu()">{{ 'HEADER.SUB_SERVICES.DANISMA' | translate }}</a></li>
+            <li><a routerLink="/hizmetlerimiz/denetim-raporlama" (click)="closeMenu()">{{ 'HEADER.SUB_SERVICES.DENETIM' | translate }}</a></li>
+            <li><a routerLink="/hizmetlerimiz/site-danismanlik" (click)="closeMenu()">{{ 'HEADER.SUB_SERVICES.SITE_DANISMANLIK' | translate }}</a></li>
+            <li><a routerLink="/hizmetlerimiz/site-hukuk" (click)="closeMenu()">{{ 'HEADER.SUB_SERVICES.HUKUK' | translate }}</a></li>
+            <li><a routerLink="/hizmetlerimiz/site-muhasebe" (click)="closeMenu()">{{ 'HEADER.SUB_SERVICES.MUHASEBE' | translate }}</a></li>
+            <li><a routerLink="/hizmetlerimiz/teknik" (click)="closeMenu()">{{ 'HEADER.SUB_SERVICES.TEKNIK' | translate }}</a></li>
+            <li><a routerLink="/hizmetlerimiz/temizlik" (click)="closeMenu()">{{ 'HEADER.SUB_SERVICES.TEMIZLIK' | translate }}</a></li>
+            <li><a routerLink="/hizmetlerimiz/web-tasarim" (click)="closeMenu()">{{ 'HEADER.SUB_SERVICES.WEB' | translate }}</a></li>
           </ul>
         </li>
-        <li><a routerLink="/iletisim" routerLinkActive="active" (click)="closeMenu()">İletişim</a></li>
+        <li><a routerLink="/iletisim" routerLinkActive="active" (click)="closeMenu()">{{ 'HEADER.CONTACT' | translate }}</a></li>
       </ul>
+      
+      <div class="mobile-sidebar-contact mt-auto pb-5 text-center w-100 d-lg-none">
+        <hr class="border-secondary mx-4 mb-4 opacity-25">
+        <a href="mailto:info@andyonetim.com.tr" class="d-block text-white-50 mb-3 fs-6 text-decoration-none"><i class="fas fa-envelope text-secondary me-2"></i>info&#64;andyonetim.com.tr</a>
+        <a href="tel:+905402025263" class="d-block text-white-50 mb-3 fs-6 text-decoration-none"><i class="fas fa-phone-alt text-secondary me-2"></i>0540 202 52 63</a>
+        <span class="d-block text-white-50 fs-6"><i class="fas fa-map-marker-alt text-secondary me-2"></i>Maltepe / İstanbul</span>
+      </div>
     </nav>
 
-    <button class="mobile-toggle" (click)="toggleMenu()" [class.active]="isMenuOpen">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <div class="mobile-actions d-lg-none d-flex align-items-center gap-4">
+      <div class="lang-switch d-flex gap-2">
+        <a href="#" class="lang-btn" (click)="setLang('tr', $event)" title="Türkçe"
+          [class.active]="activeLang === 'tr'">
+          <img src="assets/flags/turkey.png" alt="TR" class="flag-img" style="width: 24px;">
+        </a>
+        <a href="#" class="lang-btn" (click)="setLang('en', $event)" title="English"
+          [class.active]="activeLang === 'en'">
+          <img src="assets/flags/england.png" alt="EN" class="flag-img" style="width: 24px;">
+        </a>
+      </div>
+      <button class="mobile-toggle" (click)="toggleMenu()" [class.active]="isMenuOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </div>
 </header>

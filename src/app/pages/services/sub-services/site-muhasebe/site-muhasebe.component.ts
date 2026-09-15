@@ -2,51 +2,52 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ContactFormComponent } from '../../../../components/contact-form/contact-form.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-site-muhasebe',
   standalone: true,
-  imports: [CommonModule, RouterModule, ContactFormComponent],
+  imports: [CommonModule, RouterModule, ContactFormComponent, TranslateModule],
   templateUrl: './site-muhasebe.component.html',
   styleUrl: './site-muhasebe.component.scss'
 })
 export class SiteMuhasebeComponent {
   titleData = {
-    badge: 'Şeffaf Finans',
-    title: 'Site Muhasebe Hizmetleri',
-    desc: 'Sitenizin mali işlerini güvenilir ellere teslim edin. Gelir-gider takibini düzenli ve şeffaf bir şekilde yöneterek bütçenizi kontrol altında tutuyoruz.'
+    badgeKey: 'SUB_SERVICES_DATA.site-muhasebe.HERO_BADGE',
+    titleKey: 'SUB_SERVICES_DATA.site-muhasebe.HERO_TITLE',
+    descKey: 'SUB_SERVICES_DATA.site-muhasebe.HERO_DESC'
   };
 
   features = [
     {
       icon: "fas fa-calculator",
-      title: "Aidat Takibi ve Tahsilat",
-      text: "Kat maliklerinin aidat ödemelerinin düzenli takibi ve gecikmelerin bildirilmesi."
+      titleKey: 'SUB_SERVICES_DATA.site-muhasebe.F1_T',
+      textKey: 'SUB_SERVICES_DATA.site-muhasebe.F1_D'
     },
     {
       icon: "fas fa-file-invoice-dollar",
-      title: "Fatura ve Fiş İşleme",
-      text: "Siteye ait tüm harcama faturalarının muhasebe sistemine anında işlenmesi."
+      titleKey: 'SUB_SERVICES_DATA.site-muhasebe.F2_T',
+      textKey: 'SUB_SERVICES_DATA.site-muhasebe.F2_D'
     },
     {
       icon: "fas fa-users",
-      title: "Personel Bordrolama",
-      text: "Sitede çalışan personelin maaş, SGK ve özlük haklarının yasalara uygun yönetimi."
+      titleKey: 'SUB_SERVICES_DATA.site-muhasebe.F3_T',
+      textKey: 'SUB_SERVICES_DATA.site-muhasebe.F3_D'
     },
     {
       icon: "fas fa-chart-pie",
-      title: "Aylık Raporlama",
-      text: "Gelir-gider durumunu gösteren anlaşılır finansal tabloların hazırlanması."
+      titleKey: 'SUB_SERVICES_DATA.site-muhasebe.F4_T',
+      textKey: 'SUB_SERVICES_DATA.site-muhasebe.F4_D'
     }
   ];
 
-  processTitleDesc = 'Paranızın nereye harcandığını her zaman bilmeniz için dijital ve şeffaf bir finansal yönetim sunuyoruz.';
+  processTitleDescKey = 'SUB_SERVICES_DATA.site-muhasebe.PROCESS_DESC';
 
   processSteps = [
-    { step: 1, title: 'Bütçe Planlama', desc: 'Sitenizin yıllık giderleri öngörülerek işletme projesi hazırlanır.' },
-    { step: 2, title: 'Kayıt Altına Alma', desc: 'Tüm finansal hareketler günlük olarak muhasebe yazılımına işlenir.' },
-    { step: 3, title: 'Ödeme Yönetimi', desc: 'Tedarikçi ve personel ödemeleri zamanında ve eksiksiz yapılır.' },
-    { step: 4, title: 'Şeffaf Sunum', desc: 'Her ayın sonunda mali raporlar yönetim panosunda ve dijitalde paylaşılır.' }
+    { step: 1, titleKey: 'SUB_SERVICES_DATA.site-muhasebe.P1_T', descKey: 'SUB_SERVICES_DATA.site-muhasebe.P1_D' },
+    { step: 2, titleKey: 'SUB_SERVICES_DATA.site-muhasebe.P2_T', descKey: 'SUB_SERVICES_DATA.site-muhasebe.P2_D' },
+    { step: 3, titleKey: 'SUB_SERVICES_DATA.site-muhasebe.P3_T', descKey: 'SUB_SERVICES_DATA.site-muhasebe.P3_D' },
+    { step: 4, titleKey: 'SUB_SERVICES_DATA.site-muhasebe.P4_T', descKey: 'SUB_SERVICES_DATA.site-muhasebe.P4_D' }
   ];
 
   images = {
@@ -54,23 +55,23 @@ export class SiteMuhasebeComponent {
     imgBack: 'assets/images/photo-1460925895917-afdab827c52f.jpg'
   };
 
-  infoTitle = 'Finansal Huzurunuz İçin';
+  infoTitleKey = 'SUB_SERVICES_DATA.site-muhasebe.INFO_TITLE';
 
   infoList = [
     {
       icon: 'fas fa-mobile-alt',
-      title: 'Dijital Takip',
-      desc: 'Mobil uygulama üzerinden aidat borcunuzu görebilir ve kredi kartıyla ödeyebilirsiniz.'
+      titleKey: 'SUB_SERVICES_DATA.site-muhasebe.I1_T',
+      descKey: 'SUB_SERVICES_DATA.site-muhasebe.I1_D'
     },
     {
       icon: 'fas fa-eye',
-      title: 'Tam Şeffaflık',
-      desc: 'Toplanan aidatların nereye harcandığı kuruşu kuruşuna belgelenir.'
+      titleKey: 'SUB_SERVICES_DATA.site-muhasebe.I2_T',
+      descKey: 'SUB_SERVICES_DATA.site-muhasebe.I2_D'
     },
     {
       icon: 'fas fa-file-signature',
-      title: 'Vergi Hukukuna Uygun',
-      desc: 'Tüm beyanname ve resmi bildirimler yasal süresi içinde eksiksiz tamamlanır.'
+      titleKey: 'SUB_SERVICES_DATA.site-muhasebe.I3_T',
+      descKey: 'SUB_SERVICES_DATA.site-muhasebe.I3_D'
     }
   ];
 }

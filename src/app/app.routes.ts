@@ -15,19 +15,19 @@ import { TemizlikComponent } from './pages/services/sub-services/temizlik/temizl
 import { WebTasarimComponent } from './pages/services/sub-services/web-tasarim/web-tasarim.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'kurumsal', component: AboutComponent },
-  { path: 'hizmetlerimiz', component: ServicesComponent },
-  { path: 'hizmetlerimiz/bahce-bakim', component: BahceBakimComponent },
-  { path: 'hizmetlerimiz/concierge', component: ConciergeComponent },
-  { path: 'hizmetlerimiz/danisma', component: DanismaComponent },
-  { path: 'hizmetlerimiz/denetim-raporlama', component: DenetimRaporlamaComponent },
-  { path: 'hizmetlerimiz/site-danismanlik', component: SiteDanismanlikComponent },
-  { path: 'hizmetlerimiz/site-hukuk', component: SiteHukukComponent },
-  { path: 'hizmetlerimiz/site-muhasebe', component: SiteMuhasebeComponent },
-  { path: 'hizmetlerimiz/teknik', component: TeknikComponent },
-  { path: 'hizmetlerimiz/temizlik', component: TemizlikComponent },
-  { path: 'hizmetlerimiz/web-tasarim', component: WebTasarimComponent },
-  { path: 'iletisim', component: ContactComponent },
+  { path: '', component: HomeComponent, data: { pageKey: 'HOME' } },
+  { path: 'kurumsal', component: AboutComponent, data: { pageKey: 'ABOUT' } },
+  { path: 'hizmetlerimiz', component: ServicesComponent, data: { pageKey: 'SERVICES' } },
+  { path: 'hizmetlerimiz/bahce-bakim', component: BahceBakimComponent, data: { pageKey: 'BAHCE_BAKIM' } },
+  { path: 'hizmetlerimiz/concierge', component: ConciergeComponent, data: { pageKey: 'CONCIERGE' } },
+  { path: 'hizmetlerimiz/danisma', component: DanismaComponent, data: { pageKey: 'DANISMA' } },
+  { path: 'hizmetlerimiz/denetim-raporlama', component: DenetimRaporlamaComponent, data: { pageKey: 'DENETIM_RAPORLAMA' } },
+  { path: 'hizmetlerimiz/site-danismanlik', component: SiteDanismanlikComponent, data: { pageKey: 'SITE_DANISMANLIK' } },
+  { path: 'hizmetlerimiz/site-hukuk', component: SiteHukukComponent, data: { pageKey: 'SITE_HUKUK' } },
+  { path: 'hizmetlerimiz/site-muhasebe', component: SiteMuhasebeComponent, data: { pageKey: 'SITE_MUHASEBE' } },
+  { path: 'hizmetlerimiz/teknik', component: TeknikComponent, data: { pageKey: 'TEKNIK' } },
+  { path: 'hizmetlerimiz/temizlik', component: TemizlikComponent, data: { pageKey: 'TEMIZLIK' } },
+  { path: 'hizmetlerimiz/web-tasarim', component: WebTasarimComponent, data: { pageKey: 'WEB_TASARIM' } },
+  { path: 'iletisim', component: ContactComponent, data: { pageKey: 'CONTACT' } },
   { path: '**', redirectTo: '' }
 ];

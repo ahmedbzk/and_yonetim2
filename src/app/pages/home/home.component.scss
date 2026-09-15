@@ -116,6 +116,18 @@
   .about-img-wrapper .floating-badge {
     right: 20px;
   }
+  
+  .features-badge {
+    bottom: -15px;
+    left: 15px;
+    right: 15px;
+  }
+}
+
+.features-badge {
+  bottom: -30px; 
+  left: -30px; 
+  border-left: 4px solid var(--secondary-color);
 }
 
 /* SERVICES SECTION */

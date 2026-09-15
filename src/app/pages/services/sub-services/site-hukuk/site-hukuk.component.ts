@@ -2,51 +2,52 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ContactFormComponent } from '../../../../components/contact-form/contact-form.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-site-hukuk',
   standalone: true,
-  imports: [CommonModule, RouterModule, ContactFormComponent],
+  imports: [CommonModule, RouterModule, ContactFormComponent, TranslateModule],
   templateUrl: './site-hukuk.component.html',
   styleUrl: './site-hukuk.component.scss'
 })
 export class SiteHukukComponent {
   titleData = {
-    badge: 'Hukuki Güvence',
-    title: 'Site Hukuk Hizmetleri',
-    desc: 'Kat Mülkiyeti Kanunu ve ilgili tüm yasal süreçlerde uzman avukatlarımızla yanınızdayız. Yönetiminizin hukuki zeminde sağlam adımlar atmasını sağlıyoruz.'
+    badgeKey: 'SUB_SERVICES_DATA.site-hukuk.HERO_BADGE',
+    titleKey: 'SUB_SERVICES_DATA.site-hukuk.HERO_TITLE',
+    descKey: 'SUB_SERVICES_DATA.site-hukuk.HERO_DESC'
   };
 
   features = [
     {
       icon: "fas fa-gavel",
-      title: "İcra Takibi",
-      text: "Ödenmeyen aidat ve diğer gider avanslarının hukuki yollarla tahsilatı."
+      titleKey: 'SUB_SERVICES_DATA.site-hukuk.F1_T',
+      textKey: 'SUB_SERVICES_DATA.site-hukuk.F1_D'
     },
     {
       icon: "fas fa-file-contract",
-      title: "Sözleşme Yönetimi",
-      text: "Tedarikçi, personel ve bakım sözleşmelerinin hukuka uygun şekilde hazırlanması."
+      titleKey: 'SUB_SERVICES_DATA.site-hukuk.F2_T',
+      textKey: 'SUB_SERVICES_DATA.site-hukuk.F2_D'
     },
     {
       icon: "fas fa-users",
-      title: "Genel Kurul Danışmanlığı",
-      text: "Toplantıların kanuna uygun yapılması ve alınan kararların hukuki geçerliliğinin sağlanması."
+      titleKey: 'SUB_SERVICES_DATA.site-hukuk.F3_T',
+      textKey: 'SUB_SERVICES_DATA.site-hukuk.F3_D'
     },
     {
       icon: "fas fa-balance-scale-left",
-      title: "Arabuluculuk",
-      text: "Kat malikleri arasında yaşanan anlaşmazlıkların mahkemeye taşınmadan çözümü."
+      titleKey: 'SUB_SERVICES_DATA.site-hukuk.F4_T',
+      textKey: 'SUB_SERVICES_DATA.site-hukuk.F4_D'
     }
   ];
 
-  processTitleDesc = 'Hukuki süreçleri sizin adınıza titizlikle takip ediyor, olası riskleri önceden bertaraf ediyoruz.';
+  processTitleDescKey = 'SUB_SERVICES_DATA.site-hukuk.PROCESS_DESC';
 
   processSteps = [
-    { step: 1, title: 'Dosya İnceleme', desc: 'Sitenizin hukuki durumu, mevcut sözleşmeler ve geçmiş kararlar incelenir.' },
-    { step: 2, title: 'İhtar ve Bildirim', desc: 'Gecikmiş ödemeler ve kural ihlalleri için yasal bildirimler yapılır.' },
-    { step: 3, title: 'Dava ve İcra', desc: 'Sonuç alınamayan durumlarda icra takibi ve dava süreçleri başlatılır.' },
-    { step: 4, title: 'Düzenli Raporlama', desc: 'Devam eden hukuki süreçlerin durumu hakkında yönetime rapor sunulur.' }
+    { step: 1, titleKey: 'SUB_SERVICES_DATA.site-hukuk.P1_T', descKey: 'SUB_SERVICES_DATA.site-hukuk.P1_D' },
+    { step: 2, titleKey: 'SUB_SERVICES_DATA.site-hukuk.P2_T', descKey: 'SUB_SERVICES_DATA.site-hukuk.P2_D' },
+    { step: 3, titleKey: 'SUB_SERVICES_DATA.site-hukuk.P3_T', descKey: 'SUB_SERVICES_DATA.site-hukuk.P3_D' },
+    { step: 4, titleKey: 'SUB_SERVICES_DATA.site-hukuk.P4_T', descKey: 'SUB_SERVICES_DATA.site-hukuk.P4_D' }
   ];
 
   images = {
@@ -54,23 +55,23 @@ export class SiteHukukComponent {
     imgBack: 'assets/images/photo-1521791136064-7986c2920216.jpg'
   };
 
-  infoTitle = 'Hukukun Gücü Yanınızda';
+  infoTitleKey = 'SUB_SERVICES_DATA.site-hukuk.INFO_TITLE';
 
   infoList = [
     {
       icon: 'fas fa-shield-alt',
-      title: 'Zarar Görmeyin',
-      desc: 'Yanlış hukuki adımlar nedeniyle oluşabilecek maddi ve manevi zararların önüne geçin.'
+      titleKey: 'SUB_SERVICES_DATA.site-hukuk.I1_T',
+      descKey: 'SUB_SERVICES_DATA.site-hukuk.I1_D'
     },
     {
       icon: 'fas fa-hourglass-half',
-      title: 'Hızlı Çözüm',
-      desc: 'Uzman avukatlarımız sayesinde yasal süreçleri en kısa sürede lehinize sonuçlandırın.'
+      titleKey: 'SUB_SERVICES_DATA.site-hukuk.I2_T',
+      descKey: 'SUB_SERVICES_DATA.site-hukuk.I2_D'
     },
     {
       icon: 'fas fa-book',
-      title: 'KMK Uzmanlığı',
-      desc: 'Sadece Kat Mülkiyeti Kanunu alanında deneyimli, özel bir hukuk ekibiyle çalışın.'
+      titleKey: 'SUB_SERVICES_DATA.site-hukuk.I3_T',
+      descKey: 'SUB_SERVICES_DATA.site-hukuk.I3_D'
     }
   ];
 }

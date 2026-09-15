@@ -1,9 +1,9 @@
 <!-- Section 1: Hero Section -->
 <section class="hero-page" style="background-image: linear-gradient(135deg, rgba(11, 36, 71, 0.85) 0%, rgba(11, 36, 71, 0.6) 100%), url('assets/images/photo-1486406146926-c627a92ad1ab.jpg');">
   <div class="hero-content text-center px-3">
-    <span class="badge mb-3">Hizmetlerimiz</span>
-    <h1 class="display-4 fw-bold">Profesyonel Çözümler</h1>
-    <p class="mt-3 text-white-50 fs-5" style="max-width: 800px; margin: 0 auto;">Siteleriniz, tesisleriniz ve apartmanlarınız için ihtiyaç duyduğunuz tüm yönetim, denetim ve danışmanlık hizmetlerini tek bir çatı altında sunuyoruz.</p>
+    <span class="badge mb-3">{{ 'SERVICES_PAGE.HERO_BADGE' | translate }}</span>
+    <h1 class="display-4 fw-bold">{{ 'SERVICES_PAGE.HERO_TITLE' | translate }}</h1>
+    <p class="mt-3 text-white-50 fs-5" style="max-width: 800px; margin: 0 auto;">{{ 'SERVICES_PAGE.HERO_DESC' | translate }}</p>
   </div>
 </section>
 
@@ -16,20 +16,20 @@
           <img src="assets/images/photo-1556740738-b6a63e27c4df.jpg" alt="Ekip Çalışması" class="img-fluid rounded-4 shadow-lg approach-img">
           <div class="experience-badge bg-service text-white rounded-circle d-flex flex-column align-items-center justify-content-center shadow-lg">
             <span class="fs-2 fw-bold">10+</span>
-            <span class="small text-uppercase">Yıllık Tecrübe</span>
+            <span class="small text-uppercase">{{ 'SERVICES_PAGE.APPROACH_YEARS' | translate }}</span>
           </div>
         </div>
       </div>
       <div class="col-lg-6 animate-on-scroll fade-in-right">
-        <h6 class="text-service fw-bold text-uppercase tracking-wide mb-2">Yaklaşımımız</h6>
-        <h2 class="display-6 fw-bold mb-4">Şeffaf, Güvenilir ve Yenilikçi Yönetim Anlayışı</h2>
-        <p class="lead text-muted mb-4">Mülkünüzün değerini korurken, yaşam kalitenizi en üst düzeye çıkarmak için modern teknolojileri ve uzman insan kaynağını bir araya getiriyoruz.</p>
+        <h6 class="text-service fw-bold text-uppercase tracking-wide mb-2">{{ 'SERVICES_PAGE.APPROACH_BADGE' | translate }}</h6>
+        <h2 class="display-6 fw-bold mb-4">{{ 'SERVICES_PAGE.APPROACH_TITLE' | translate }}</h2>
+        <p class="lead text-muted mb-4">{{ 'SERVICES_PAGE.APPROACH_DESC' | translate }}</p>
         <ul class="list-unstyled custom-check-list mb-5">
-          <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-service me-3 fs-5"></i> <span>Geniş kapsamlı hukuki ve mali güvence</span></li>
-          <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-service me-3 fs-5"></i> <span>7/24 kesintisiz teknik destek ve acil müdahale</span></li>
-          <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-service me-3 fs-5"></i> <span>Tüm sakinler için dijital şeffaflık ve kolay ödeme</span></li>
+          <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-service me-3 fs-5"></i> <span>{{ 'SERVICES_PAGE.APPROACH_LI1' | translate }}</span></li>
+          <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-service me-3 fs-5"></i> <span>{{ 'SERVICES_PAGE.APPROACH_LI2' | translate }}</span></li>
+          <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-service me-3 fs-5"></i> <span>{{ 'SERVICES_PAGE.APPROACH_LI3' | translate }}</span></li>
         </ul>
-        <a routerLink="/hakkimizda" class="btn btn-service px-4 py-2 rounded-pill">Bizi Yakından Tanıyın <i class="fas fa-arrow-right ms-2"></i></a>
+        <a routerLink="/hakkimizda" class="btn btn-service px-4 py-2 rounded-pill">{{ 'SERVICES_PAGE.APPROACH_BTN' | translate }} <i class="fas fa-arrow-right ms-2"></i></a>
       </div>
     </div>
   </div>
@@ -39,8 +39,8 @@
 <section class="why-us-section py-6 bg-light-blue">
   <div class="container">
     <div class="text-center mb-5 animate-on-scroll fade-in-up">
-      <h6 class="text-service fw-bold text-uppercase tracking-wide">Farkımız</h6>
-      <h2 class="display-6 fw-bold">Neden Bizi Seçmelisiniz?</h2>
+      <h6 class="text-service fw-bold text-uppercase tracking-wide">{{ 'SERVICES_PAGE.WHY_BADGE' | translate }}</h6>
+      <h2 class="display-6 fw-bold">{{ 'SERVICES_PAGE.WHY_TITLE' | translate }}</h2>
     </div>
     
     <div class="row g-4">
@@ -49,8 +49,8 @@
           <div class="icon-box mx-auto bg-light-blue text-service mb-4 rounded-circle d-flex align-items-center justify-content-center">
             <i class="fas fa-shield-alt fs-2"></i>
           </div>
-          <h4 class="fw-bold mb-3">Tam Güvence</h4>
-          <p class="text-muted mb-0">Hukuki süreçlerden mali tabloya kadar her aşamada riskleri sıfıra indiririz.</p>
+          <h4 class="fw-bold mb-3">{{ 'SERVICES_PAGE.WHY1_TITLE' | translate }}</h4>
+          <p class="text-muted mb-0">{{ 'SERVICES_PAGE.WHY1_DESC' | translate }}</p>
         </div>
       </div>
       <div class="col-lg-4 col-md-6 animate-on-scroll stagger-2">
@@ -58,8 +58,8 @@
           <div class="icon-box mx-auto bg-light-blue text-service mb-4 rounded-circle d-flex align-items-center justify-content-center">
             <i class="fas fa-mobile-alt fs-2"></i>
           </div>
-          <h4 class="fw-bold mb-3">Dijital Şeffaflık</h4>
-          <p class="text-muted mb-0">Mobil uygulama üzerinden aidat ödeme, bütçe takibi ve anlık bildirim imkanı sunarız.</p>
+          <h4 class="fw-bold mb-3">{{ 'SERVICES_PAGE.WHY2_TITLE' | translate }}</h4>
+          <p class="text-muted mb-0">{{ 'SERVICES_PAGE.WHY2_DESC' | translate }}</p>
         </div>
       </div>
       <div class="col-lg-4 col-md-6 animate-on-scroll stagger-3">
@@ -67,8 +67,8 @@
           <div class="icon-box mx-auto bg-light-blue text-service mb-4 rounded-circle d-flex align-items-center justify-content-center">
             <i class="fas fa-users-cog fs-2"></i>
           </div>
-          <h4 class="fw-bold mb-3">Uzman Kadro</h4>
-          <p class="text-muted mb-0">Güvenlik, temizlik ve teknik bakım ekiplerimiz profesyonel eğitimlerden geçmiştir.</p>
+          <h4 class="fw-bold mb-3">{{ 'SERVICES_PAGE.WHY3_TITLE' | translate }}</h4>
+          <p class="text-muted mb-0">{{ 'SERVICES_PAGE.WHY3_DESC' | translate }}</p>
         </div>
       </div>
     </div>
@@ -79,8 +79,8 @@
 <section class="services-grid-section py-6">
   <div class="container">
     <div class="text-center mb-5 animate-on-scroll fade-in-up">
-      <h6 class="text-service fw-bold text-uppercase tracking-wide">Uzmanlık Alanlarımız</h6>
-      <h2 class="display-6 fw-bold">Tüm Hizmetlerimiz</h2>
+      <h6 class="text-service fw-bold text-uppercase tracking-wide">{{ 'SERVICES_PAGE.GRID_BADGE' | translate }}</h6>
+      <h2 class="display-6 fw-bold">{{ 'SERVICES_PAGE.GRID_TITLE' | translate }}</h2>
     </div>
     <div class="row g-4 justify-content-center">
       <div class="col-lg-4 col-md-6 animate-on-scroll fade-in-up" *ngFor="let service of services.slice(1); let i = index" [style.transition-delay]="(i * 100) + 'ms'">
@@ -92,11 +92,11 @@
             </div>
           </div>
           <div class="card-body text-center mt-4">
-            <h3 class="h4 fw-bold mb-3">{{ service.title }}</h3>
-            <p class="text-muted fs-5">{{ service.description }}</p>
+            <h3 class="h4 fw-bold mb-3">{{ service.titleKey | translate }}</h3>
+            <p class="text-muted fs-5">{{ service.descKey | translate }}</p>
           </div>
           <div class="card-footer bg-transparent border-0 text-center pb-4">
-            <span class="explore-btn fs-6">Detaylı Bilgi <i class="fas fa-arrow-right ms-2"></i></span>
+            <span class="explore-btn fs-6">{{ 'SERVICES_PAGE.GRID_BTN' | translate }} <i class="fas fa-arrow-right ms-2"></i></span>
           </div>
         </div>
       </div>
@@ -112,24 +112,24 @@
     <div class="row g-4 mb-5 border-bottom border-light pb-5 animate-on-scroll fade-in-up">
       <div class="col-md-3 col-6">
         <h2 class="display-4 fw-bold mb-0 text-white">150+</h2>
-        <p class="fs-5 text-white-50">Yönetilen Site</p>
+        <p class="fs-5 text-white-50">{{ 'SERVICES_PAGE.STATS_SITES' | translate }}</p>
       </div>
       <div class="col-md-3 col-6">
         <h2 class="display-4 fw-bold mb-0 text-white">12K+</h2>
-        <p class="fs-5 text-white-50">Mutlu Sakin</p>
+        <p class="fs-5 text-white-50">{{ 'SERVICES_PAGE.STATS_RESIDENTS' | translate }}</p>
       </div>
       <div class="col-md-3 col-6">
         <h2 class="display-4 fw-bold mb-0 text-white">300+</h2>
-        <p class="fs-5 text-white-50">Uzman Personel</p>
+        <p class="fs-5 text-white-50">{{ 'SERVICES_PAGE.STATS_STAFF' | translate }}</p>
       </div>
       <div class="col-md-3 col-6">
         <h2 class="display-4 fw-bold mb-0 text-white">%100</h2>
-        <p class="fs-5 text-white-50">Şeffaflık</p>
+        <p class="fs-5 text-white-50">{{ 'SERVICES_PAGE.STATS_TRANSPARENCY' | translate }}</p>
       </div>
     </div>
 
-    <h2 class="display-5 fw-bold mb-3 text-white animate-on-scroll fade-in-up">İhtiyaçlarınıza Özel Çözümler</h2>
-    <p class="lead mb-5 text-white-50 animate-on-scroll fade-in-up stagger-1" style="max-width: 700px; margin: 0 auto;">Siteniz veya tesisiniz için en uygun yönetim modelini belirlemek üzere uzmanlarımızla iletişime geçin. Ücretsiz keşif avantajından yararlanın.</p>
-    <a routerLink="/iletisim" class="btn btn-light btn-lg px-5 rounded-pill shadow-lg fw-bold animate-on-scroll fade-in-up stagger-2">Hemen Bize Ulaşın</a>
+    <h2 class="display-5 fw-bold mb-3 text-white animate-on-scroll fade-in-up">{{ 'SERVICES_PAGE.CTA_TITLE' | translate }}</h2>
+    <p class="lead mb-5 text-white-50 animate-on-scroll fade-in-up stagger-1" style="max-width: 700px; margin: 0 auto;">{{ 'SERVICES_PAGE.CTA_DESC' | translate }}</p>
+    <a routerLink="/iletisim" class="btn btn-light btn-lg px-5 rounded-pill shadow-lg fw-bold animate-on-scroll fade-in-up stagger-2">{{ 'SERVICES_PAGE.CTA_BTN' | translate }}</a>
   </div>
 </section>

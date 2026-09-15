@@ -40,3 +40,10 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# PHP & API
+api/vendor/
+api/send-mail.php
+
+# Deployment & Secrets
+deploy.js

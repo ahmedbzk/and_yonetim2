@@ -1,74 +1,77 @@
 <footer class="footer-premium">
-  <div class="footer-top-border"></div>
+  <div class="footer-top-glow"></div>
   <div class="container py-5">
     <div class="row g-5">
       <!-- About -->
-      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-        <img src="assets/logo-Png.png" alt="AND Yönetim" class="mb-4" style="max-height: 140px; filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.5));">
-        <p class="text-white-50 mb-4" style="line-height: 1.8;">
-          Modern site yönetimi hizmetleriyle yaşam alanlarınız için buradayız. Şeffaflık, güven ve profesyonellikle tesislerinizi geleceğe taşıyoruz.
+      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 footer-brand-section">
+        <a routerLink="/" class="d-inline-block mb-4">
+          <img src="assets/logo-Png.png" alt="AND Yönetim" class="footer-logo">
+        </a>
+        <p class="footer-desc mb-4">
+          {{ 'FOOTER.DESC' | translate }}
         </p>
         <div class="social-links d-flex gap-3">
-          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.instagram.com/andyonetim/" target="_blank" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
       
       <!-- Quick Links -->
       <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
-        <h5 class="fw-bold text-white mb-4 position-relative footer-heading">Kurumsal</h5>
+        <h5 class="footer-heading">{{ 'FOOTER.QUICK_LINKS' | translate }}</h5>
         <ul class="list-unstyled footer-links">
-          <li><a routerLink="/"><i class="fas fa-chevron-right me-2 text-secondary small"></i> Anasayfa</a></li>
-          <li><a routerLink="/kurumsal"><i class="fas fa-chevron-right me-2 text-secondary small"></i> Hakkımızda</a></li>
-          <li><a routerLink="/hizmetlerimiz"><i class="fas fa-chevron-right me-2 text-secondary small"></i> Hizmetlerimiz</a></li>
-          <li><a routerLink="/iletisim"><i class="fas fa-chevron-right me-2 text-secondary small"></i> İletişim</a></li>
+          <li><a routerLink="/"><span class="link-arrow"></span> {{ 'HEADER.HOME' | translate }}</a></li>
+          <li><a routerLink="/kurumsal"><span class="link-arrow"></span> {{ 'HEADER.ABOUT' | translate }}</a></li>
+          <li><a routerLink="/hizmetlerimiz"><span class="link-arrow"></span> {{ 'HEADER.SERVICES' | translate }}</a></li>
+          <li><a routerLink="/iletisim"><span class="link-arrow"></span> {{ 'HEADER.CONTACT' | translate }}</a></li>
         </ul>
       </div>
 
       <!-- Services -->
-      <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-        <h5 class="fw-bold text-white mb-4 position-relative footer-heading">Tüm Hizmetlerimiz</h5>
-        <ul class="list-unstyled footer-links" style="column-count: 2; column-gap: 20px;">
-          <li><a routerLink="/hizmetlerimiz/site-danismanlik"><i class="fas fa-chevron-right me-1 text-secondary" style="font-size: 0.7rem;"></i> Yönetim</a></li>
-          <li><a routerLink="/hizmetlerimiz/bahce-bakim"><i class="fas fa-chevron-right me-1 text-secondary" style="font-size: 0.7rem;"></i> Bahçe</a></li>
-          <li><a routerLink="/hizmetlerimiz/teknik"><i class="fas fa-chevron-right me-1 text-secondary" style="font-size: 0.7rem;"></i> Teknik</a></li>
-          <li><a routerLink="/hizmetlerimiz/site-hukuk"><i class="fas fa-chevron-right me-1 text-secondary" style="font-size: 0.7rem;"></i> Hukuk</a></li>
-          <li><a routerLink="/hizmetlerimiz/site-muhasebe"><i class="fas fa-chevron-right me-1 text-secondary" style="font-size: 0.7rem;"></i> Muhasebe</a></li>
-          <li><a routerLink="/hizmetlerimiz/temizlik"><i class="fas fa-chevron-right me-1 text-secondary" style="font-size: 0.7rem;"></i> Temizlik</a></li>
-          <li><a routerLink="/hizmetlerimiz/concierge"><i class="fas fa-chevron-right me-1 text-secondary" style="font-size: 0.7rem;"></i> Concierge</a></li>
-          <li><a routerLink="/hizmetlerimiz/danisma"><i class="fas fa-chevron-right me-1 text-secondary" style="font-size: 0.7rem;"></i> Danışma</a></li>
-          <li><a routerLink="/hizmetlerimiz/denetim-raporlama"><i class="fas fa-chevron-right me-1 text-secondary" style="font-size: 0.7rem;"></i> Denetim</a></li>
-          <li><a routerLink="/hizmetlerimiz/web-tasarim"><i class="fas fa-chevron-right me-1 text-secondary" style="font-size: 0.7rem;"></i> Yazılım</a></li>
+      <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+        <h5 class="footer-heading">{{ 'FOOTER.ALL_SERVICES' | translate }}</h5>
+        <ul class="list-unstyled footer-links services-grid">
+          <li><a routerLink="/hizmetlerimiz/site-danismanlik"><span class="link-arrow"></span> {{ 'SERVICES_PAGE.LIST.DANISMANLIK.SHORT' | translate }}</a></li>
+          <li><a routerLink="/hizmetlerimiz/bahce-bakim"><span class="link-arrow"></span> {{ 'SERVICES_PAGE.LIST.BAHCE.SHORT' | translate }}</a></li>
+          <li><a routerLink="/hizmetlerimiz/teknik"><span class="link-arrow"></span> {{ 'SERVICES_PAGE.LIST.TEKNIK.SHORT' | translate }}</a></li>
+          <li><a routerLink="/hizmetlerimiz/site-hukuk"><span class="link-arrow"></span> {{ 'SERVICES_PAGE.LIST.HUKUK.SHORT' | translate }}</a></li>
+          <li><a routerLink="/hizmetlerimiz/site-muhasebe"><span class="link-arrow"></span> {{ 'SERVICES_PAGE.LIST.MUHASEBE.SHORT' | translate }}</a></li>
+          <li><a routerLink="/hizmetlerimiz/temizlik"><span class="link-arrow"></span> {{ 'SERVICES_PAGE.LIST.TEMIZLIK.SHORT' | translate }}</a></li>
+          <li><a routerLink="/hizmetlerimiz/concierge"><span class="link-arrow"></span> {{ 'SERVICES_PAGE.LIST.CONCIERGE.SHORT' | translate }}</a></li>
+          <li><a routerLink="/hizmetlerimiz/danisma"><span class="link-arrow"></span> {{ 'SERVICES_PAGE.LIST.DANISMA.SHORT' | translate }}</a></li>
+          <li><a routerLink="/hizmetlerimiz/denetim-raporlama"><span class="link-arrow"></span> {{ 'SERVICES_PAGE.LIST.DENETIM.SHORT' | translate }}</a></li>
+          <li><a routerLink="/hizmetlerimiz/web-tasarim"><span class="link-arrow"></span> {{ 'SERVICES_PAGE.LIST.WEB.SHORT' | translate }}</a></li>
         </ul>
       </div>
       
       <!-- Contact -->
       <div class="col-lg-3 col-md-6">
-        <h5 class="fw-bold text-white mb-4 position-relative footer-heading">İletişim</h5>
+        <h5 class="footer-heading">{{ 'FOOTER.CONTACT' | translate }}</h5>
         <ul class="list-unstyled footer-contact">
-          <li class="d-flex mb-3">
-            <i class="fas fa-map-marker-alt text-secondary mt-1 me-3 fs-5"></i>
-            <span class="text-white-50">Maltepe, İstanbul<br>Türkiye</span>
+          <li class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="contact-text" [innerHTML]="'CONTACT_PAGE.ADDRESS_DESC' | translate"></div>
           </li>
-          <li class="d-flex mb-3">
-            <i class="fas fa-phone-alt text-secondary mt-1 me-3 fs-5"></i>
-            <a href="tel:+905402025263" class="text-white-50 text-decoration-none hover-secondary">0540 202 52 63</a>
+          <li class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+            <div class="contact-text">
+              <a href="tel:+905402025263" class="hover-secondary">0540 202 52 63</a>
+            </div>
           </li>
-          <li class="d-flex">
-            <i class="fas fa-envelope text-secondary mt-1 me-3 fs-5"></i>
-            <a href="mailto:info@andyonetim.com.tr" class="text-white-50 text-decoration-none hover-secondary">info&#64;andyonetim.com.tr</a>
+          <li class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-text">
+              <a href="mailto:info@andyonetim.com.tr" class="hover-secondary">info&#64;andyonetim.com.tr</a>
+            </div>
           </li>
         </ul>
       </div>
     </div>
   </div>
   
-  <div class="footer-bottom border-top border-secondary border-opacity-25 py-4">
+  <div class="footer-bottom py-4">
     <div class="container text-center">
-      <p class="mb-0 text-white-50 small">
-        Copyright © 2025 <strong class="text-white">AND Yönetim</strong>. Tüm hakları saklıdır.
+      <p class="mb-0 copyright-text">
+        Copyright &copy; 2025 <strong class="text-white">AND Yönetim</strong>. {{ 'FOOTER.COPYRIGHT' | translate }}
       </p>
     </div>
   </div>

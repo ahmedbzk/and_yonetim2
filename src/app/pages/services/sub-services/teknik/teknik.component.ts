@@ -2,51 +2,52 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ContactFormComponent } from '../../../../components/contact-form/contact-form.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-teknik',
   standalone: true,
-  imports: [CommonModule, RouterModule, ContactFormComponent],
+  imports: [CommonModule, RouterModule, ContactFormComponent, TranslateModule],
   templateUrl: './teknik.component.html',
   styleUrl: './teknik.component.scss'
 })
 export class TeknikComponent {
   titleData = {
-    badge: 'Kesintisiz Yaşam',
-    title: 'Profesyonel Teknik Hizmetler',
-    desc: 'Sitenizin veya tesisinizin altyapı, elektrik, mekanik ve asansör gibi tüm teknik süreçlerini yönetiyor, arızalara anında müdahale ediyoruz.'
+    badgeKey: 'SUB_SERVICES_DATA.teknik.HERO_BADGE',
+    titleKey: 'SUB_SERVICES_DATA.teknik.HERO_TITLE',
+    descKey: 'SUB_SERVICES_DATA.teknik.HERO_DESC'
   };
 
   features = [
     {
       icon: "fas fa-bolt",
-      title: "Elektrik ve Aydınlatma",
-      text: "Ortak alan aydınlatmaları, jeneratör bakımı ve elektrik panolarının periyodik kontrolü."
+      titleKey: 'SUB_SERVICES_DATA.teknik.F1_T',
+      textKey: 'SUB_SERVICES_DATA.teknik.F1_D'
     },
     {
       icon: "fas fa-wrench",
-      title: "Mekanik ve Tesisat",
-      text: "Su depoları, hidrofor sistemleri ve sıhhi tesisat arızalarının giderilmesi."
+      titleKey: 'SUB_SERVICES_DATA.teknik.F2_T',
+      textKey: 'SUB_SERVICES_DATA.teknik.F2_D'
     },
     {
       icon: "fas fa-elevator",
-      title: "Asansör Bakım Takibi",
-      text: "Asansörlerin yasal mevzuata uygun periyodik bakımlarının yaptırılması ve takibi."
+      titleKey: 'SUB_SERVICES_DATA.teknik.F3_T',
+      textKey: 'SUB_SERVICES_DATA.teknik.F3_D'
     },
     {
       icon: "fas fa-thermometer-half",
-      title: "Isıtma ve Soğutma",
-      text: "Kazan dairesi, merkezi ısıtma ve iklimlendirme sistemlerinin işletilmesi."
+      titleKey: 'SUB_SERVICES_DATA.teknik.F4_T',
+      textKey: 'SUB_SERVICES_DATA.teknik.F4_D'
     }
   ];
 
-  processTitleDesc = 'Olası arızaları önceden tespit eden koruyucu bakım yaklaşımımızla konforunuzdan ödün vermeyin.';
+  processTitleDescKey = 'SUB_SERVICES_DATA.teknik.PROCESS_DESC';
 
   processSteps = [
-    { step: 1, title: 'Check-Up', desc: 'Tesisin tüm teknik altyapısı detaylı bir şekilde incelenerek risk raporu çıkarılır.' },
-    { step: 2, title: 'Koruyucu Bakım', desc: 'Sistemlerin ömrünü uzatmak için periyodik bakım takvimi oluşturulur.' },
-    { step: 3, title: 'Hızlı Müdahale', desc: 'Meydana gelen arızalara 7/24 esasıyla, en kısa sürede teknik ekip yönlendirilir.' },
-    { step: 4, title: 'Çözüm Onayı', desc: 'Yapılan onarım test edilir ve yönetime detaylı teknik rapor sunulur.' }
+    { step: 1, titleKey: 'SUB_SERVICES_DATA.teknik.P1_T', descKey: 'SUB_SERVICES_DATA.teknik.P1_D' },
+    { step: 2, titleKey: 'SUB_SERVICES_DATA.teknik.P2_T', descKey: 'SUB_SERVICES_DATA.teknik.P2_D' },
+    { step: 3, titleKey: 'SUB_SERVICES_DATA.teknik.P3_T', descKey: 'SUB_SERVICES_DATA.teknik.P3_D' },
+    { step: 4, titleKey: 'SUB_SERVICES_DATA.teknik.P4_T', descKey: 'SUB_SERVICES_DATA.teknik.P4_D' }
   ];
 
   images = {
@@ -54,23 +55,23 @@ export class TeknikComponent {
     imgBack: 'assets/images/photo-1581092335397-9583eb92d232.jpg'
   };
 
-  infoTitle = 'Güvenli ve Sorunsuz İşleyiş';
+  infoTitleKey = 'SUB_SERVICES_DATA.teknik.INFO_TITLE';
 
   infoList = [
     {
       icon: 'fas fa-stopwatch',
-      title: '7/24 Acil Destek',
-      desc: 'Beklenmedik durumlarda gece gündüz demeden teknik ekibimizle yanınızdayız.'
+      titleKey: 'SUB_SERVICES_DATA.teknik.I1_T',
+      descKey: 'SUB_SERVICES_DATA.teknik.I1_D'
     },
     {
       icon: 'fas fa-tools',
-      title: 'Uzman Kadro',
-      desc: 'Her biri kendi alanında sertifikalı, iş güvenliği kurallarına hakim personeller.'
+      titleKey: 'SUB_SERVICES_DATA.teknik.I2_T',
+      descKey: 'SUB_SERVICES_DATA.teknik.I2_D'
     },
     {
       icon: 'fas fa-file-contract',
-      title: 'Sertifikalı Bakımlar',
-      desc: 'Sistemlerinizin yasal zorunluluk gerektiren tüm muayenelerinin zamanında yapılması.'
+      titleKey: 'SUB_SERVICES_DATA.teknik.I3_T',
+      descKey: 'SUB_SERVICES_DATA.teknik.I3_D'
     }
   ];
 }

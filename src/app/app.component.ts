@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SocialFabComponent } from './components/social-fab/social-fab.component';
+import { LanguageService } from './services/language.service';
 
 @Component({
   selector: 'app-root',
@@ -13,4 +14,6 @@ import { SocialFabComponent } from './components/social-fab/social-fab.component
 })
 export class AppComponent {
   title = 'and-yonetim';
+  
+  constructor(private languageService: LanguageService) {}
 }

@@ -2,51 +2,52 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ContactFormComponent } from '../../../../components/contact-form/contact-form.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-concierge',
   standalone: true,
-  imports: [CommonModule, RouterModule, ContactFormComponent],
+  imports: [CommonModule, RouterModule, ContactFormComponent, TranslateModule],
   templateUrl: './concierge.component.html',
   styleUrl: './concierge.component.scss'
 })
 export class ConciergeComponent {
   titleData = {
-    badge: 'Ayrıcalıklı Hizmet',
-    title: 'Profesyonel Concierge Hizmetleri',
-    desc: 'Yaşam alanlarınızda konforunuzu artırmak için günlük ihtiyaçlarınıza pratik, hızlı ve güvenilir çözümler sunuyoruz. Siz hayatın tadını çıkarın, gerisini bize bırakın.'
+    badgeKey: 'SUB_SERVICES_DATA.concierge.HERO_BADGE',
+    titleKey: 'SUB_SERVICES_DATA.concierge.HERO_TITLE',
+    descKey: 'SUB_SERVICES_DATA.concierge.HERO_DESC'
   };
 
   features = [
     {
       icon: "fas fa-concierge-bell",
-      title: "Karşılama ve Yönlendirme",
-      text: "Misafirlerinizin profesyonel bir şekilde karşılanması ve ilgili yerlere yönlendirilmesi."
+      titleKey: 'SUB_SERVICES_DATA.concierge.F1_T',
+      textKey: 'SUB_SERVICES_DATA.concierge.F1_D'
     },
     {
       icon: "fas fa-calendar-check",
-      title: "Rezervasyon Yönetimi",
-      text: "Restoran, uçak bileti, etkinlik veya toplantı salonu gibi tüm rezervasyon işlemlerinizin organizasyonu."
+      titleKey: 'SUB_SERVICES_DATA.concierge.F2_T',
+      textKey: 'SUB_SERVICES_DATA.concierge.F2_D'
     },
     {
       icon: "fas fa-shopping-bag",
-      title: "Kişisel Asistanlık",
-      text: "Market alışverişi, kuru temizleme ve kurye takibi gibi günlük işlerinizin zamanında yapılması."
+      titleKey: 'SUB_SERVICES_DATA.concierge.F3_T',
+      textKey: 'SUB_SERVICES_DATA.concierge.F3_D'
     },
     {
       icon: "fas fa-car",
-      title: "Vale ve Transfer",
-      text: "Araç parkı, havaalanı transferi ve şoförlü araç kiralama organizasyonları."
+      titleKey: 'SUB_SERVICES_DATA.concierge.F4_T',
+      textKey: 'SUB_SERVICES_DATA.concierge.F4_D'
     }
   ];
 
-  processTitleDesc = 'Size zaman kazandıran, hayatınızı kolaylaştıran özel asistanlık ve concierge hizmetlerimizle ayrıcalığı hissedin.';
+  processTitleDescKey = 'SUB_SERVICES_DATA.concierge.PROCESS_DESC';
 
   processSteps = [
-    { step: 1, title: 'Talep Alma', desc: 'İhtiyaçlarınızı telefon, mesaj veya uygulama üzerinden hızlıca bize iletiyorsunuz.' },
-    { step: 2, title: 'Planlama', desc: 'Talebinize en uygun çözümü uzman ekibimiz hızla planlar ve organize eder.' },
-    { step: 3, title: 'Gerçekleştirme', desc: 'Deneyimli personelimiz veya anlaşmalı çözüm ortaklarımızla talebiniz yerine getirilir.' },
-    { step: 4, title: 'Bilgilendirme', desc: 'İşlemin başarıyla tamamlandığına dair size anında bilgi verilir.' }
+    { step: 1, titleKey: 'SUB_SERVICES_DATA.concierge.P1_T', descKey: 'SUB_SERVICES_DATA.concierge.P1_D' },
+    { step: 2, titleKey: 'SUB_SERVICES_DATA.concierge.P2_T', descKey: 'SUB_SERVICES_DATA.concierge.P2_D' },
+    { step: 3, titleKey: 'SUB_SERVICES_DATA.concierge.P3_T', descKey: 'SUB_SERVICES_DATA.concierge.P3_D' },
+    { step: 4, titleKey: 'SUB_SERVICES_DATA.concierge.P4_T', descKey: 'SUB_SERVICES_DATA.concierge.P4_D' }
   ];
 
   images = {
@@ -54,23 +55,23 @@ export class ConciergeComponent {
     imgBack: 'assets/images/photo-1566073771259-6a8506099945.jpg'
   };
 
-  infoTitle = 'Konforunuz Önceliğimizdir';
+  infoTitleKey = 'SUB_SERVICES_DATA.concierge.INFO_TITLE';
 
   infoList = [
     {
       icon: 'fas fa-clock',
-      title: 'Zaman Tasarrufu',
-      desc: 'Sıradan işlerle vakit kaybetmeyin, sevdiklerinize daha çok zaman ayırın.'
+      titleKey: 'SUB_SERVICES_DATA.concierge.I1_T',
+      descKey: 'SUB_SERVICES_DATA.concierge.I1_D'
     },
     {
       icon: 'fas fa-shield-alt',
-      title: 'Güvenilir Hizmet',
-      desc: 'Tüm işlemleriniz güvenlik standartlarına uygun ve gizlilik çerçevesinde yapılır.'
+      titleKey: 'SUB_SERVICES_DATA.concierge.I2_T',
+      descKey: 'SUB_SERVICES_DATA.concierge.I2_D'
     },
     {
       icon: 'fas fa-star',
-      title: 'Ayrıcalıklı Hissettirir',
-      desc: 'Yaşam kalitenizi artıran, kişiye özel premium hizmet anlayışı.'
+      titleKey: 'SUB_SERVICES_DATA.concierge.I3_T',
+      descKey: 'SUB_SERVICES_DATA.concierge.I3_D'
     }
   ];
 }

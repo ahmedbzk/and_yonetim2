@@ -1,0 +1,7 @@
+{
+    "name": "and-yonetim/api",
+    "description": "API for contact form using PHPMailer",
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    }
+}
